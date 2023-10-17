@@ -35,9 +35,9 @@
     </ShowAsCollectionAssociation>
   </Class>
   <Class Name="TrainerTraineeApp.Entities.Training">
-    <Position X="4.5" Y="2.75" Width="1.5" />
+    <Position X="4" Y="2.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAACAAACAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAACAAACAAAAACAAAAAAAgAA=</HashCode>
       <FileName>Entities\Training.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -48,19 +48,8 @@
       <Property Name="Trainees" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="TrainerTraineeApp.Entities.Course">
-    <Position X="4.5" Y="4.25" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\Module.cs</FileName>
-    </TypeIdentifier>
-    <ShowAsCollectionAssociation>
-      <Property Name="Modules" />
-      <Property Name="Trainings" />
-    </ShowAsCollectionAssociation>
-  </Class>
   <Class Name="TrainerTraineeApp.Entities.Module">
-    <Position X="4.5" Y="5.75" Width="1.5" />
+    <Position X="4.25" Y="6.25" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
       <FileName>Entities\Module.cs</FileName>
@@ -69,21 +58,32 @@
       <Property Name="Units" />
     </ShowAsCollectionAssociation>
   </Class>
+  <Class Name="TrainerTraineeApp.Entities.Course">
+    <Position X="4.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAQEAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Course.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsCollectionAssociation>
+      <Property Name="Modules" />
+      <Property Name="Trainings" />
+    </ShowAsCollectionAssociation>
+  </Class>
   <Class Name="TrainerTraineeApp.Entities.Unit">
     <Position X="8" Y="5.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAACAAAAA=</HashCode>
-      <FileName>Entities\Module.cs</FileName>
+      <FileName>Entities\Unit.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Topics" />
     </ShowAsCollectionAssociation>
   </Class>
-  <Class Name="TrainerTraineeApp.Entities.Topic" Collapsed="true">
-    <Position X="8" Y="4.25" Width="1.5" />
+  <Class Name="TrainerTraineeApp.Entities.Topic">
+    <Position X="8" Y="3.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>Entities\Module.cs</FileName>
+      <FileName>Entities\Topic.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
