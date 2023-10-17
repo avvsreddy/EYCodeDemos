@@ -11,6 +11,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Reference Notes and Labs", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerTraineeApp", "TrainerTraineeApp\TrainerTraineeApp.csproj", "{4754C437-D776-490A-9205-4B6F56DBFF7B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOConceptsDemo", "OOConceptsDemo\OOConceptsDemo.csproj", "{59504620-5C70-4222-B2FC-EE0075D20BA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{4754C437-D776-490A-9205-4B6F56DBFF7B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4754C437-D776-490A-9205-4B6F56DBFF7B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4754C437-D776-490A-9205-4B6F56DBFF7B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59504620-5C70-4222-B2FC-EE0075D20BA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59504620-5C70-4222-B2FC-EE0075D20BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59504620-5C70-4222-B2FC-EE0075D20BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59504620-5C70-4222-B2FC-EE0075D20BA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
