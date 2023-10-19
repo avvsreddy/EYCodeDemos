@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TrainerTraineeApp", "Traine
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OOConceptsDemo", "OOConceptsDemo\OOConceptsDemo.csproj", "{59504620-5C70-4222-B2FC-EE0075D20BA2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MemManagementDemo", "MemManagementDemo\MemManagementDemo.csproj", "{1A4835E5-2DF9-4E32-B534-71F052FAA007}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IDELangDemo", "IDELangDemo\IDELangDemo.csproj", "{714BF950-B662-4895-A261-44C7C4468F65}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +43,14 @@ Global
 		{59504620-5C70-4222-B2FC-EE0075D20BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{59504620-5C70-4222-B2FC-EE0075D20BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{59504620-5C70-4222-B2FC-EE0075D20BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1A4835E5-2DF9-4E32-B534-71F052FAA007}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1A4835E5-2DF9-4E32-B534-71F052FAA007}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1A4835E5-2DF9-4E32-B534-71F052FAA007}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1A4835E5-2DF9-4E32-B534-71F052FAA007}.Release|Any CPU.Build.0 = Release|Any CPU
+		{714BF950-B662-4895-A261-44C7C4468F65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{714BF950-B662-4895-A261-44C7C4468F65}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{714BF950-B662-4895-A261-44C7C4468F65}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{714BF950-B662-4895-A261-44C7C4468F65}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
