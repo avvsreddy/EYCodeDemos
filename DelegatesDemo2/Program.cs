@@ -12,10 +12,15 @@
 
             acc1.alert += Communication.Alert.SendWhatsApp;
 
+            //acc1.Subscribe(Communication.Alert.SendSMS);
+
+
+            //acc1.alert("Deposited $9999999999999999999");
+
             acc1.Deposit(1000);
             Console.WriteLine(acc1.Balance);
-            acc1.Withdraw(500);
-            Console.WriteLine(acc1.Balance);
+            //acc1.Withdraw(500);
+            //Console.WriteLine(acc1.Balance);
         }
     }
 
@@ -26,7 +31,18 @@
     {
         public int Balance { get; set; }
         // instantiation
-        public AlertDelete alert;
+        public event AlertDelete alert;
+
+        //public void Subscribe(AlertDelete alert)
+        //{
+        //    this.alert += alert;
+        //}
+
+        //public void Unsubscribe(AlertDelete alert)
+        //{
+        //    this.alert -= alert;
+        //}
+
         public void Deposit(int amount)
         {
             Balance += amount;
