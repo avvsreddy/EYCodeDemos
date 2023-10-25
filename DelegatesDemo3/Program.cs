@@ -19,7 +19,33 @@ namespace DelegatesDemo3
             //pMgr.ShowProcessList(FilterByMemSize);
 
             // client dev 4
-            pMgr.ShowProcessList(FilterByThreads);
+            //pMgr.ShowProcessList(FilterByThreads);
+
+            // Anonymous Delegates - holds address of anoynous method
+
+            pMgr.ShowProcessList(delegate (Process p)
+                {
+                    return p.Threads.Count >= 50;
+                });
+
+
+            // Lambda Expression - Light Weight Syntax for Anonymous Delegates
+
+            // Lambda - Statement - Expression
+
+            pMgr.ShowProcessList((Process p) =>
+            {
+                return p.Threads.Count >= 50;
+            });
+
+            // Lambda Expression
+            pMgr.ShowProcessList((Process p) =>
+
+                 p.Threads.Count >= 50
+            );
+
+            // Lambda Expression
+            pMgr.ShowProcessList(p => p.Threads.Count >= 50);
 
         }
 
@@ -39,10 +65,10 @@ namespace DelegatesDemo3
         }
 
         // client 4
-        public static bool FilterByThreads(Process p)
-        {
-            return p.Threads.Count >= 50;
-        }
+        //public static bool FilterByThreads(Process p)
+        //{
+        //    return p.Threads.Count >= 50;
+        //}
     }
 
     public delegate bool FilterDelegate(Process p);
