@@ -11,32 +11,48 @@ namespace DelegatesDemo3
             //pMgr.ShowProcessList();
 
             // Client Developer 2
-            //pMgr.ShowProcessList("S");
+            //FilterDelegate filter = new FilterDelegate(FilterByName);
+            //pMgr.ShowProcessList(filter);
 
             // Client Dev 3
-            pMgr.ShowProcessList(500 * 1024 * 1024); // > 100MB
+            //pMgr.ShowProcessList(500 * 1024 * 1024); // > 100MB
+            //pMgr.ShowProcessList(FilterByMemSize);
+
+            // client dev 4
+            pMgr.ShowProcessList(FilterByThreads);
 
         }
+
+        // client 2
+        public static bool FilterByName(Process p)
+        {
+            if (p.ProcessName.StartsWith("S"))
+                return true;
+            else
+                return false;
+        }
+
+        // client 3
+        public static bool FilterByMemSize(Process p)
+        {
+            return p.WorkingSet64 >= 500 * 1024 * 1024;
+        }
+
+        // client 4
+        public static bool FilterByThreads(Process p)
+        {
+            return p.Threads.Count >= 50;
+        }
     }
+
+    public delegate bool FilterDelegate(Process p);
 
 
     // Developer 1
     public class ProcessManager // OCP
     {
-        public void ShowProcessList()
-        {
-            // code to display all running process in a system
 
-            Process[] processes = Process.GetProcesses();
-
-            foreach (Process process in processes)
-            {
-                // display process name
-                Console.WriteLine(process.ProcessName);
-            }
-        }
-
-        public void ShowProcessList(string sw)
+        public void ShowProcessList(FilterDelegate filter)
         {
             // code to display all running process in a system
 
@@ -45,23 +61,11 @@ namespace DelegatesDemo3
             foreach (Process process in processes)
             {
                 // display process name starts with "S"
-                if (process.ProcessName.StartsWith(sw))
+                if (filter(process))
                     Console.WriteLine(process.ProcessName);
             }
         }
 
-        public void ShowProcessList(long size)
-        {
-            // code to display all running process in a system
 
-            Process[] processes = Process.GetProcesses();
-
-            foreach (Process process in processes)
-            {
-                // display process name based on mem size
-                if (process.WorkingSet64 >= size)
-                    Console.WriteLine(process.ProcessName);
-            }
-        }
     }
 }
