@@ -47,26 +47,43 @@ namespace MTDemo1
             sw.Stop();
             Console.WriteLine(sw.ElapsedMilliseconds);
 
+            sw = Stopwatch.StartNew();
+            Console.WriteLine("Running in TPL - Parallel For");
+            Parallel.Invoke(M11, M22);
+            sw.Stop();
+            Console.WriteLine(sw.ElapsedMilliseconds);
         }
 
         static void M1()
         {
-            //Console.WriteLine($"M1 method in thread id :{Thread.CurrentThread.ManagedThreadId}");
-            Thread.Sleep(5000);
-            //for (int i = 1; i < 1000; i++)
-            //{
-            //    Console.WriteLine($"M1 : {i}");
-            //}
-
+            for (int i = 1; i < 100; i++)
+            {
+                Thread.Sleep(100);
+            }
         }
         static void M2()
         {
-            //Console.WriteLine($"M2 method in thread id :{Thread.CurrentThread.ManagedThreadId}");
-            Thread.Sleep(5000);
-            //for (int i = 1; i < 1000; i++)
-            //{
-            //    Console.WriteLine($"M2 : {i}");
-            //}
+            for (int i = 1; i < 100; i++)
+            {
+                Thread.Sleep(100);
+            }
+        }
+
+        static void M11()
+        {
+            //for (int i = 1; i < 100; i++)
+            Parallel.For(1, 101, i =>
+            {
+                Thread.Sleep(100);
+            });
+        }
+        static void M22()
+        {
+            //for (int i = 1; i < 100; i++)
+            Parallel.For(1, 101, x =>
+            {
+                Thread.Sleep(100);
+            });
         }
     }
 }
