@@ -1,4 +1,6 @@
-﻿namespace DPDemo
+﻿using System.Configuration;
+
+namespace DPDemo
 {
     public class Program
     {
@@ -7,6 +9,7 @@
             Console.WriteLine("Hello, World!");
             BillingSystem billingSystem = new BillingSystem();
             billingSystem.GenerateBill();
+
         }
     }
 
@@ -14,7 +17,14 @@
     {
         public ITaxCalculator CreateTaxCalculator()
         {
-            return new APTaxCalculator();
+            // read the config and get the calculator class name
+            string clacClassName = ConfigurationManager.AppSettings["CALC"];
+            // reflection
+            Type theType = Type.GetType(clacClassName);
+            ITaxCalculator calculator = (ITaxCalculator)Activator.CreateInstance(theType);
+
+
+            return calculator;
         }
     }
 
@@ -89,4 +99,22 @@
         }
     }
 
+    public class USTaxCalculator
+    {
+        public float ComputeTax(float amt)
+        {
+            //sdfdf ldkfjsd f flsdkfjsd lkfj
+            return 245.89f;
+        }
+    }
+
+    public class USTaxCalculatorAdaptor : ITaxCalculator
+    {
+        public double CalculateTax(double amt)
+        {
+            Console.WriteLine("US Tax Calculator");
+            USTaxCalculator calculator = new USTaxCalculator();
+            return calculator.ComputeTax((float)amt);
+        }
+    }
 }
