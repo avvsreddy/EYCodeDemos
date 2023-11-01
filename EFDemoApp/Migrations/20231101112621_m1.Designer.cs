@@ -3,6 +3,7 @@ using EFDemoApp.DataAccess;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EFDemoApp.Migrations
 {
     [DbContext(typeof(ProductsDbContext))]
-    partial class ProductsDbContextModelSnapshot : ModelSnapshot
+    [Migration("20231101112621_m1")]
+    partial class m1
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -20,23 +23,6 @@ namespace EFDemoApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("EFDemoApp.Entities.Category", b =>
-                {
-                    b.Property<int>("CategoryID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CategoryID"));
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("CategoryID");
-
-                    b.ToTable("Categories");
-                });
 
             modelBuilder.Entity("EFDemoApp.Entities.Product", b =>
                 {
@@ -50,9 +36,6 @@ namespace EFDemoApp.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("CategoryID")
-                        .HasColumnType("int");
-
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasMaxLength(100)
@@ -63,20 +46,23 @@ namespace EFDemoApp.Migrations
 
                     b.HasKey("ProductID");
 
-                    b.HasIndex("CategoryID");
-
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("EFDemoApp.Entities.Product", b =>
+            modelBuilder.Entity("EFDemoApp.Entities.Student", b =>
                 {
-                    b.HasOne("EFDemoApp.Entities.Category", "Category")
-                        .WithMany()
-                        .HasForeignKey("CategoryID")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                    b.Property<int>("RollNo")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
 
-                    b.Navigation("Category");
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("RollNo"));
+
+                    b.Property<int>("Name")
+                        .HasColumnType("int");
+
+                    b.HasKey("RollNo");
+
+                    b.ToTable("Students");
                 });
 #pragma warning restore 612, 618
         }

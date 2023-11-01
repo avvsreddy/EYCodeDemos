@@ -7,7 +7,25 @@ namespace EFDemoApp.Presentation
     {
         static void Main(string[] args)
         {
-            // accept product name and price and save into data
+
+            // Add new product into new category
+            Category c = new Category { Name = "Mobiles" };
+
+            Product p = new Product { Name = "IPhone X", Brand = "Apple", Price = 90000, Category = c };
+
+            ProductsDbContext db = new ProductsDbContext();
+            db.Products.Add(p);
+            //db.Categories.Add(c);
+
+            db.SaveChanges();
+
+
+
+
+        }
+
+        public static void Menu()
+        {
             while (true)
             {
                 Console.WriteLine("Product Management System");
@@ -36,11 +54,7 @@ namespace EFDemoApp.Presentation
                         break;
                 }
             }
-
-
-
         }
-
         private static void Edit()
         {
             ProductsDbContext db = new ProductsDbContext();
@@ -84,8 +98,8 @@ namespace EFDemoApp.Presentation
                 Console.WriteLine("Product not found");
             else
             {
-                Console.WriteLine("Product ID \t Name \t Price");
-                Console.WriteLine($"{product.ProductID}\t{product.Name}\t{product.Price}");
+                Console.WriteLine("Product ID \t Name \t Price \t Brand");
+                Console.WriteLine($"{product.ProductID}\t{product.Name}\t{product.Price}\tBrand");
             }
         }
 
