@@ -1,6 +1,5 @@
 ﻿using EFDemoApp.Entities;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace EFDemoApp.DataAccess
 {
@@ -11,7 +10,7 @@ namespace EFDemoApp.DataAccess
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=ProductsCatalogEY2023;Integrated Security=True");
-            optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+            //optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
         }
 
         // configure the tables
