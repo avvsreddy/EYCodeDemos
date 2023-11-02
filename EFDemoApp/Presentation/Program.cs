@@ -9,9 +9,43 @@ namespace EFDemoApp.Presentation
         static void Main(string[] args)
         {
             //ProductsDbContext db = new ProductsDbContext();
-            //var s = db.Suppliers.ToList();
 
-            NewMethod67();
+
+            // get all products - PLinq
+            //var allProducts = from p in db.Products.AsParallel()
+            //                select p;
+
+
+            // get all products for readonly
+
+            ProductsRepository repo = new ProductsRepository();
+            var allProducts = repo.GetAll();
+
+
+
+            //db.Products.("update products set price = price + 1");
+
+            //db.Products.ExecuteUpdate("update products set price = price + 1");
+            //Console.WriteLine("Done");
+
+            //db.Database.ExecuteSqlRaw("update products set price = price + 1");
+            //Console.WriteLine("Done");
+
+            // increase all products price by 1rs
+
+            // get all products
+            //var allProducts = db.Products.ToList();
+            // update the price
+            //foreach (var item in allProducts)
+            //{
+            //    item.Price += 1;
+            //}
+            // save changes
+            //db.SaveChanges();
+
+
+
+
         }
 
         private static void NewMethod67()

@@ -4,7 +4,7 @@ using Microsoft.Extensions.Logging;
 
 namespace EFDemoApp.DataAccess
 {
-    public class ProductsDbContext : DbContext
+    internal class ProductsDbContext : DbContext
     {
 
         // configure the database
@@ -25,6 +25,8 @@ namespace EFDemoApp.DataAccess
 
 
             modelBuilder.Entity<Person>().UseTpcMappingStrategy();
+
+            //modelBuilder.Entity<Product>().map
         }
 
 
