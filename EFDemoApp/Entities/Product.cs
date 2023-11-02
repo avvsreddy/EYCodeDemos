@@ -11,7 +11,7 @@ namespace EFDemoApp.Entities
         [MaxLength(100)]
         public string? Brand { get; set; }
         public int Price { get; set; }
-        public Category Category { get; set; }
+        public virtual Category Category { get; set; }
     }
 
     public class Category

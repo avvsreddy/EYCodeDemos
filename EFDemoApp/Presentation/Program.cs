@@ -7,21 +7,51 @@ namespace EFDemoApp.Presentation
     {
         static void Main(string[] args)
         {
+            // get all products and display pname and cname
+            ProductsDbContext db = new ProductsDbContext();
+            // egar loading - include
+            //var allProducts = db.Products.Include(p => p.Category).ToList();
+            var allProducts = db.Products.ToList();
+            //display
+            foreach (var item in allProducts)
+            {
+                Console.WriteLine($"{item.Name}\t{item.Category.Name}");
+            }
 
+        }
+
+        private static void NewMethod2()
+        {
+            ProductsDbContext db = new ProductsDbContext();
+            // add new product into existing catagory
+            Product p = new Product { Name = "Galaxy S23 Pro", Brand = "Samsung", Price = 155000 };
+
+            var c = db.Categories.Find(1);
+            // associate p with c
+            p.Category = c;
+            db.Products.Add(p);
+            //db.Categories.Add(c);
+            db.SaveChanges();
+        }
+
+        private static void NewMethod1()
+        {
             // Add new product into new category
             Category c = new Category { Name = "Mobiles" };
 
-            Product p = new Product { Name = "IPhone X", Brand = "Apple", Price = 90000, Category = c };
+            Product p = new Product
+            {
+                Name = "IPhone X",
+                Brand = "Apple",
+                Price = 90000,
+                Category = c
+            };
 
             ProductsDbContext db = new ProductsDbContext();
             db.Products.Add(p);
             //db.Categories.Add(c);
 
             db.SaveChanges();
-
-
-
-
         }
 
         public static void Menu()

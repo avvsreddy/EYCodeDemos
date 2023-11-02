@@ -12,6 +12,9 @@ namespace EFDemoApp.DataAccess
         {
             optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=ProductsCatalogEY2023;Integrated Security=True");
             optionsBuilder.LogTo(Console.WriteLine, LogLevel.Information);
+            // install package : Microsoft.EntityFrameworkCore.Proxies
+            optionsBuilder.UseLazyLoadingProxies(true);
+
         }
 
         // configure the tables
