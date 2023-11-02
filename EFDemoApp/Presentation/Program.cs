@@ -8,7 +8,56 @@ namespace EFDemoApp.Presentation
     {
         static void Main(string[] args)
         {
-            // get all products and display pname and cname
+            // Get all suppliers
+            ProductsDbContext db = new ProductsDbContext();
+            var s = from c in db.Customers
+                    select c;
+            s.ToList();
+
+
+        }
+
+        private static void NewMethod67()
+        {
+            // add new suppler
+            Supplier s = new Supplier
+            {
+                Address = "suppler address 1",
+                City = "suppler city 1",
+                Email = "suppler email id 1",
+                GSTNo = "supper 1 gst",
+                Mobile = "suppler 1 mobile",
+                Name = "supplier 1",
+                PAN = "suppler pan 1",
+                TradeNo = "suppler trade 1"
+            };
+            ProductsDbContext db = new ProductsDbContext();
+            db.Suppliers.Add(s);
+            db.SaveChanges();
+        }
+
+        private static void NewMethod23()
+        {
+            // Add new Customer
+            Customer c = new Customer
+            {
+                Name = "Customer 1",
+                Address = "Address 1",
+                City = "City 1",
+                CustType = "Type 1",
+                Discount = 100,
+                Email = "Email1",
+                Mobile = "3243423432"
+
+            };
+
+            ProductsDbContext db = new ProductsDbContext();
+            db.Customers.Add(c);
+            db.SaveChanges();
+        }
+
+        private static void NewMethod5()
+        {
             ProductsDbContext db = new ProductsDbContext();
             // egar loading - include
             var allProducts = db.Products.Include(p => p.Category).ToList();
@@ -18,7 +67,6 @@ namespace EFDemoApp.Presentation
             {
                 Console.WriteLine($"{item.Name}\t{item.Category.Name}");
             }
-
         }
 
         private static void NewMethod2()

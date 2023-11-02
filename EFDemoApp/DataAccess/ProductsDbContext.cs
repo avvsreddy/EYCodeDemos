@@ -23,5 +23,9 @@ namespace EFDemoApp.DataAccess
         public DbSet<Category> Categories { get; set; }
 
         public DbSet<Supplier> Suppliers { get; set; }
+
+        public DbSet<Customer> Customers { get; set; }
+
+        public DbSet<Person> People { get; set; }
     }
 }

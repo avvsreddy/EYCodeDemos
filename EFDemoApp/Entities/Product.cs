@@ -23,15 +23,27 @@ namespace EFDemoApp.Entities
         public virtual List<Product> Products { get; set; }
     }
 
-    public class Supplier
+    public abstract class Person
     {
-        public int SupplierID { get; set; }
+        public int PersonID { get; set; }
         public string Name { get; set; }
         public string City { get; set; }
         public string Address { get; set; }
         public string Email { get; set; }
         public string Mobile { get; set; }
+    }
 
+    public class Supplier : Person
+    {
+        public string GSTNo { get; set; }
+        public string PAN { get; set; }
+        public string TradeNo { get; set; }
         public virtual List<Product> Products { get; set; }
+    }
+
+    public class Customer : Person
+    {
+        public int Discount { get; set; }
+        public string CustType { get; set; }
     }
 }

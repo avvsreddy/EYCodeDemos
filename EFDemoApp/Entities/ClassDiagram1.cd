@@ -26,12 +26,26 @@
   <Class Name="EFDemoApp.Entities.Supplier">
     <Position X="2.25" Y="3.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAAAAIAAAAAAQAAAAAAACCACAAAAAAAAQ=</HashCode>
+      <HashCode>AACAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAgAQ=</HashCode>
       <FileName>Entities\Product.cs</FileName>
     </TypeIdentifier>
     <ShowAsCollectionAssociation>
       <Property Name="Products" />
     </ShowAsCollectionAssociation>
+  </Class>
+  <Class Name="EFDemoApp.Entities.Person">
+    <Position X="5.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAACAAAAAIAAAAAAQAAAAAAACCAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Product.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="EFDemoApp.Entities.Customer">
+    <Position X="8.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entities\Product.cs</FileName>
+    </TypeIdentifier>
   </Class>
   <Font Name="Segoe UI" Size="9" />
 </ClassDiagram>
