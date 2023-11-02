@@ -1,5 +1,6 @@
 ﻿using EFDemoApp.DataAccess;
 using EFDemoApp.Entities;
+using Microsoft.EntityFrameworkCore;
 
 namespace EFDemoApp.Presentation
 {
@@ -10,8 +11,8 @@ namespace EFDemoApp.Presentation
             // get all products and display pname and cname
             ProductsDbContext db = new ProductsDbContext();
             // egar loading - include
-            //var allProducts = db.Products.Include(p => p.Category).ToList();
-            var allProducts = db.Products.ToList();
+            var allProducts = db.Products.Include(p => p.Category).ToList();
+            //var allProducts = db.Products.ToList();
             //display
             foreach (var item in allProducts)
             {
