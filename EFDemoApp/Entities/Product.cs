@@ -25,6 +25,7 @@ namespace EFDemoApp.Entities
 
     public abstract class Person
     {
+        //[DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int PersonID { get; set; }
         public string Name { get; set; }
         public string City { get; set; }

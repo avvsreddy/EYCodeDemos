@@ -8,13 +8,10 @@ namespace EFDemoApp.Presentation
     {
         static void Main(string[] args)
         {
-            // Get all suppliers
-            ProductsDbContext db = new ProductsDbContext();
-            var s = from c in db.Customers
-                    select c;
-            s.ToList();
+            //ProductsDbContext db = new ProductsDbContext();
+            //var s = db.Suppliers.ToList();
 
-
+            NewMethod67();
         }
 
         private static void NewMethod67()

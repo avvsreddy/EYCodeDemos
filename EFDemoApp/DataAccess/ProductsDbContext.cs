@@ -17,6 +17,17 @@ namespace EFDemoApp.DataAccess
 
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            //modelBuilder.Entity<Person>().UseTptMappingStrategy();
+            //modelBuilder.Entity<Customer>().UseTptMappingStrategy();
+            //modelBuilder.Entity<Supplier>().UseTptMappingStrategy();
+
+
+            modelBuilder.Entity<Person>().UseTpcMappingStrategy();
+        }
+
+
         // configure the tables
         public DbSet<Product> Products { get; set; }
 
