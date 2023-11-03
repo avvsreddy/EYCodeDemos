@@ -1,0 +1,26 @@
+﻿@model List<KnowledgeHubProtal.Models.Domain.Category>
+
+<h1>List of Categories</h1>
+<hr />
+<form asp-action="Index" asp-controller="Categories" method="post">
+    <input type="text" name="term" placeholder="Enter name to search" />
+    <input type="submit" name="btnSubmit" value="Search" />
+</form>
+<hr />
+
+<table class="table table-bordered table-striped" >
+    <tr>
+        <td>ID</td>
+        <td>Name</td>
+        <td>Description</td>
+    </tr>
+    @foreach (var cat in Model)
+    {
+        <tr>
+            <td>@cat.CategoryID</td>
+            <td>@cat.CategoryName.</td>
+            <td>@cat.CategoryDescription.</td>
+        </tr>
+        
+    }
+</table>
