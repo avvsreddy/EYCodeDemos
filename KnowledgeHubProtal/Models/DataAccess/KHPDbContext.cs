@@ -12,12 +12,21 @@ namespace KnowledgeHubProtal.Models.DataAccess
     {
         // configure the database
 
+        public KHPDbContext(DbContextOptions<KHPDbContext> options) : base(options)
+        {
+
+        }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=KHPDBEY2023;Integrated Security=True");
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=(localdb)\\mssqllocaldb;Initial Catalog=KHPDBEY2023;Integrated Security=True");
+            }
         }
 
         // map the tables
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Article> Articles { get; set; }
     }
 }

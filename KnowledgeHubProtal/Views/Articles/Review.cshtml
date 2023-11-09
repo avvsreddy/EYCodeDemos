@@ -1,0 +1,60 @@
+﻿@model IEnumerable<KnowledgeHubProtal.Models.Domain.Article>
+
+@{
+    ViewData["Title"] = "Review";
+}
+
+<h1>Review</h1>
+<form  method="post">
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th>
+                    Select
+                </th>
+
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+
+
+
+
+                <th>
+                    Category Name
+                </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+
+                    <td>
+                        <input type="checkbox" name="articlesid" value="@item.ArticleID" />
+                    </td>
+
+                    <td>
+                        <a href="@item.URL" target="_blank">@item.Title</a>
+                    </td>
+
+
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Category.CategoryName)
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-6"> <input type="submit" asp-action="Approve" asp-controller="Articles" name="btnApprove" value="Approve" class="btn btn-primary" />  </div>
+            <div class="col-6"><input type="submit" asp-action="Reject" asp-controller="Articles"  name="btnReject" value="Reject" class="btn btn-danger" /> </div>
+        </div>
+    </div>
+</form>

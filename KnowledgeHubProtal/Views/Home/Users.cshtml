@@ -1,0 +1,9 @@
+﻿@model List<Microsoft.AspNetCore.Identity.IdentityUser>;
+
+    <ol>
+        @foreach (var item in Model)
+        {
+            <li>@item.UserName</li>
+        }
+        
+    </ol>

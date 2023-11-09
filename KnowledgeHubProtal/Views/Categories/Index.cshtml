@@ -8,11 +8,17 @@
 </form>
 <hr />
 
+<h4>@TempData["Message"]</h4>
+
+
+<a href="Categories/Create" class="btn btn-primary">Create</a>
+
 <table class="table table-bordered table-striped" >
     <tr>
         <td>ID</td>
         <td>Name</td>
         <td>Description</td>
+        <td>Edit</td>
     </tr>
     @foreach (var cat in Model)
     {
@@ -20,6 +26,8 @@
             <td>@cat.CategoryID</td>
             <td>@cat.CategoryName.</td>
             <td>@cat.CategoryDescription.</td>
+            @*<td>  <a href="Categories/Edit?id=@cat.CategoryID" class="btn btn-primary">Edit</a>  </td>*@
+            <td>  <a asp-action="Edit" asp-controller="Categories" asp-route-id="@cat.CategoryID" class="btn btn-primary">Edit</a>  </td>
         </tr>
         
     }

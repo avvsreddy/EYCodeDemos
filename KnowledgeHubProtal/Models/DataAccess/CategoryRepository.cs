@@ -5,7 +5,12 @@ namespace KnowledgeHubProtal.Models.DataAccess
     public class CategoryRepository : ICategoryRepository
     {
 
-        private readonly KHPDbContext db = new KHPDbContext();
+        private readonly KHPDbContext db;// = new KHPDbContext();
+        public CategoryRepository(KHPDbContext db)
+        {
+            this.db = db;
+        }
+
         public void Create(Category category)
         {
             db.Categories.Add(category);

@@ -1,4 +1,6 @@
 using KnowledgeHubProtal.Data;
+using KnowledgeHubProtal.Models.DataAccess;
+using KnowledgeHubProtal.Models.Domain;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
@@ -12,13 +14,25 @@ namespace KnowledgeHubProtal
 
             // Add services to the container.
             var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
+
             builder.Services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(connectionString));
+
+            builder.Services.AddDbContext<KHPDbContext>(options => options.UseSqlServer(connectionString));
+
+            //builder.Services.AddDbContext<KHPDbContext, KHPDbContext>();
+
             builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>();
+
+
             builder.Services.AddControllersWithViews();
+
+            builder.Services.AddTransient<ICategoryRepository, CategoryRepository>();
+
 
             var app = builder.Build();
 

@@ -1,0 +1,25 @@
+﻿@model KnowledgeHubProtal.Models.Domain.Category
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+   
+
+
+    <h2>Create Category</h2>
+    <hr />
+
+    <form asp-action="Create" asp-controller="Categories" method="post">
+        <label asp-for="CategoryName" /><br />
+
+        <input type="text" asp-for="CategoryName" /><br />
+        <span asp-validation-for="CategoryName"></span><br />
+
+        <label asp-for="CategoryDescription" /><br />
+        <textarea rows="6" cols="60" asp-for="CategoryDescription"></textarea><br />
+        <span asp-validation-for="CategoryDescription"></span><br />
+
+        <input type="submit" name="btnSubmit" value="Create" />
+    </form>
+
