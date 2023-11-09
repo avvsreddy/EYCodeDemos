@@ -54,6 +54,21 @@ namespace SuperProductsCatalog.Controllers
 
         }
 
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<IActionResult> GetProductAsync(int id)
+        {
+            var product = await db.Products.FindAsync(id);
+
+            if (product == null)
+            {
+                return NotFound($"Product {id} not found"); // 404
+            }
+
+            return Ok(product); // 200 + data
+
+        }
+
 
         // create, design, implement and test below endpoints
 

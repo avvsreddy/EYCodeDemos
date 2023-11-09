@@ -79,6 +79,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoMVCApp", "DemoMVCApp\De
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperProductsCatalog", "SuperProductsCatalog\SuperProductsCatalog.csproj", "{015AB3F3-59E5-458A-99AF-F6DA3AAF04F9}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SuperProductsClient", "SuperProductsClient\SuperProductsClient.csproj", "{37EEDDA3-F288-4034-802D-255E94E0263F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -213,6 +215,10 @@ Global
 		{015AB3F3-59E5-458A-99AF-F6DA3AAF04F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{015AB3F3-59E5-458A-99AF-F6DA3AAF04F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{015AB3F3-59E5-458A-99AF-F6DA3AAF04F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{37EEDDA3-F288-4034-802D-255E94E0263F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{37EEDDA3-F288-4034-802D-255E94E0263F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{37EEDDA3-F288-4034-802D-255E94E0263F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{37EEDDA3-F288-4034-802D-255E94E0263F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
